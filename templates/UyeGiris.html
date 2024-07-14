@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Üye Girişi</title>
+     <link rel="stylesheet" href="/static/css/UyeGiris.css">
+     <script>
+          // Sayfa yüklendiğinde input kutularını boşalt
+          window.onload = function () {
+               document.getElementById('MailAdres').value = '';
+               document.getElementById('UserName').value = '';
+               document.getElementById('PassWord').value = '';
+               document.getElementById('OnayKodu').value = '';
+          };
+     </script>
+</head>
+
+<body>
+     <div class="wrapper">
+          <form action="/UyeGirisSonKontroller" method="POST">
+               <h2>Üye Giriş</h2>
+
+               <div class="input-field">
+                    <input type="mail" name="MailAdres" id="MailAdres" placeholder="eMail Adresinizi Yazınız..."
+                         required>
+               </div>
+
+               <div class="input-field">
+                    <input type="text" name="UserName" id="UserName" placeholder="Kullanıcı Adınızı Yazınız..."
+                         required>
+               </div>
+
+               <div class="input-field">
+                    <input type="password" name="PassWord" id="PassWord" placeholder="Kullanıcı Şifrenizi Yazınız..."
+                         required>
+               </div>
+
+               <div class="input-field">
+                    <input type="number" name="OnayKodu" id="OnayKodu" placeholder="Onay Kodunuzu Yazınız" required>
+               </div>
+
+               <div style="padding-top: 16px; "><button type="submit">Sonraki</button></div>
+               <div class="register">
+                    <p>Hesabınız Hala Yok Mu ? </p>
+               </div>
+               <div><a href="UyeOlun.html">Hemen Üye Olun</a></div>
+
+               <div style="color:yellow; padding-top: 32px; font-size: 12px;">
+                    Sürekli Kullanmak istediğiniz cihazla giriş yapmanız önemlidir.
+               </div>
+               <div style="color:rgb(201, 159, 189); padding-top: 8px; ; font-size: 12px;">
+                    Cihaz Bilgileriniz ile Abonelik Bilgileriniz Kayıt Altına alınacak olup ilerideki girişlerinizde
+                    başka bir cihazı kullanmanız engellenecektir.
+               </div>
+
+               <div style="color:rgb(111, 145, 170); padding-top: 8px; font-size: 12px">
+                    Başka bir cihazla giriş yapmanız durumunda ise kabul ettğiniz
+                    <a href="KullanimSartlari.html">site kullanım kuralları</a>
+                    uyarınca aboneliğiniz süresiz olarak kapatılacaktır.
+               </div>
+          </form>
+     </div>
+
+</body>
+
+</html>

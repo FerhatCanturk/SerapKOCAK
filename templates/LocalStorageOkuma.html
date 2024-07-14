@@ -1,0 +1,28 @@
+<!-- sayfa2.html -->
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Sayfa 2</title>
+     <script>
+          window.onload = function () {
+               const saklananVeri = localStorage.getItem('SKV'); // 'SKV' anahtarı ile veriyi alıyoruz
+               const DD = document.getElementById('DD'); // Verinin gösterileceği div
+
+               if (saklananVeri) {
+                    DD.innerText = saklananVeri; // Veriyi div içinde göster
+               } else {
+                    DD.innerText = 'Veri bulunamadı.'; // Veri yoksa mesaj göster
+               }
+          }
+     </script>
+</head>
+
+<body>
+     <h1>Kaydedilen</h1>
+     <div id="DD"></div> <!-- Verinin gösterileceği alan -->
+</body>
+
+</html>

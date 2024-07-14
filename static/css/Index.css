@@ -1,0 +1,160 @@
+/* Brand */
+.AnaBack {
+     height: 100vh;
+     margin: 0;
+     background-image: url('/static/images/Back008.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     z-index: 91;
+     overflow: auto;
+     /* İçeriğin kaydırılmasına izin verir */
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+     background-color: #810000;
+     width: 100vw;
+     overflow: hidden;
+     z-index: 999;
+     position: fixed;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+     float: left;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     justify-content: center;
+     text-align: center;
+     font-size: 12px;
+     font-family: 'Playwrite NZ';
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+     background-color: yellow;
+     color: black;
+}
+
+/* Nav */
+/* Ana EKran BackGround'lar */
+/* Ana EKran BackGround'lar */
+/* Ana EKran BackGround'lar */
+
+/* Başlangıç Ekranı Stili */
+/* Başlangıç Ekranı Stili */
+/* Başlangıç Ekranı Stili */
+.BeyazGolge {
+     text-shadow:
+          2px 2px 2px white,
+          -2px -2px 2px white,
+          -2px 2px 2px white,
+          2px -2px 2px white;
+
+}
+
+.SiyahGolge {
+     text-shadow:
+          2px 2px 2px rgb(0, 0, 0),
+          -2px -2px 2px rgb(0, 0, 0),
+          -2px 2px 2px rgb(0, 0, 0),
+          2px -2px 2px rgb(0, 0, 0);
+
+}
+
+.SusluGolgeliYazi {
+     font-weight: bolder;
+     text-align: center;
+}
+
+.TextAboutMe {
+     font-family: "Anton", sans-serif;
+     text-align: center;
+}
+
+
+
+
+/* Like DisLike */
+/* Like DisLike */
+/* Like DisLike */
+.flex-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 96px;
+     width: 100%;
+     margin: 0;
+}
+
+.flex-item {
+     background-color: rgb(29, 0, 52);
+     padding-top: 16px;
+     padding-bottom: 16px;
+     padding-left: 8px;
+     padding-right: 8px;
+     width: calc(15% - 0px);
+     text-align: center;
+}
+
+.flex-item img {
+     width: 85%;
+}
+
+
+@keyframes zoomIn {
+     from {
+          transform: scale(0.5);
+     }
+
+     to {
+          transform: scale(1);
+     }
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+     .flex-item {
+          width: calc(33.33% - 16px);
+          /* 3 öğe sığacak şekilde */
+     }
+}
+
+@media (max-width: 800px) {
+     .flex-item {
+          width: calc(50% - 16px);
+          /* 2 öğe sığacak şekilde */
+     }
+}
+
+@media (max-width: 500px) {
+     .flex-item {
+          width: calc(100% - 16px);
+     }
+}
+
+
+input.form-control,
+textarea.form-control {
+     box-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+     padding: 10px;
+     border: 2px solid #ccc;
+     border-radius: 5px;
+}
+
+/* Buton stilini düzenlemek */
+.w3-button {
+     border: none;
+     color: rgb(0, 0, 0);
+     padding: 12px 24px;
+     font-size: 16px;
+     box-shadow: 3px 3px 26px rgb(0, 0, 0, 1);
+     cursor: pointer;
+     border-radius: 15px;
+     transition: background-color 0.6s ease;
+}

@@ -1,0 +1,125 @@
+{% extends 'MasterAdmin.html' %}
+
+{% block Baslik %} Kullanıcı Listesi {% endblock %}
+{% block YeniStyle %} {% endblock %}
+{% block Icerikler %}
+
+<div class="table-responsive-lg">
+     <table class="table" STYLE="border-bottom:150px solid rgb(0, 0, 0);">
+          <thead>
+               <tr class="table-danger">
+                    <th role="columnheader"></th>
+                    <th role="columnheader">Kullanıcı Bilgileri</th>
+                    <th role="columnheader">İşlemler</th>
+
+               </tr>
+          </thead>
+          <tbody role="">
+               {% for User in Users %}
+               <tr id="{{User.UserID}}">
+                    <td style="width: 1vw;" role="cell">
+                         <label class="customcheckbox m-b-20">
+                              <input type="checkbox" id="mainCheckBox">
+                              <span class="checkmark"></span>
+                         </label>
+                    </td>
+
+                    <td>
+                         <strong style="color:red">AdSoyad: {{User.UserAdiSoyadi}}</strong>
+                         <div>GSM: {{User.UserGSMNumber}}</div>
+                         <div>Mail: {{User.UserMailAdress}}</div>
+                         <div>Talep: {{User.UTalep}}</div>
+                         <div>UserName: {{User.UserName}}</div>
+                         <div>PassWord: 123456</div>
+                         <div>OnayKodu: {{User.VerifyMailCode}}</div>
+                         <div>Onay: {{User.UOnay}}</div>
+                         <div>Abonelik Paketi: {{User.PaketAdi}}</div>
+                         <div>Ayrılma Tarihi: {{User.ATarih}}</div>
+                         <div>Bloke Tarihi: {{User.BTarih}}</div>
+                    </td>
+
+                    <td>
+
+                         <div class="w3-center">
+                              {% if User.DRM=='AKTIF' %}
+                              <p>{{User.DRM}}</p>
+                              <img src="/static/images/IconActive.svg">
+                              <div>
+                                   <button style="width: 100px; margin-top: 4px;" type="button"
+                                        class="btn btn-danger btn-sm">Kapat</button>
+                              </div>
+                              <div>
+                                   <button style="width: 100px; margin-top: 4px;" type="button"
+                                        class="btn btn-warning btn-sm">CihazReset</button>
+                              </div>
+                              <div>
+                                   <button style="width: 100px; margin-top: 4px;" type="button"
+                                        class="btn btn-primary btn-sm">Detay</button>
+                              </div>
+                              <form action="/ModelAc/{{User.UserID}}" method="POST">
+                                   <div>
+
+                                        <button style="width: 100px; margin-top: 4px;" type="submit"
+                                             class="btn btn-dark btn-sm">ModelAç</button>
+                                   </div>
+                              </form>
+                              {% endif %}
+
+                              {% if User.DRM=='ODEME BEKLENIYOR' %}
+                              <img src="/static/images/IconCash.svg">
+
+
+                              <form action="/UyeAktifle/{{User.UserID}}" method="POST">
+                                   <button style="width: 100px;" type="button"
+                                        class="btn btn-success btn-sm">ÜyeAç</button>
+                              </form>
+
+                              {%endif%}
+
+                              {% if User.DRM=='YONETICI' %} <img src="/static/images/IconAdmin.svg">{% endif
+                              %}
+                              {% if User.DRM=='BLOKELI' %}
+                              <img src="/static/images/IconBlock.svg">
+                              <div>
+                                   <button style="width: 100px; margin-top: 4px;" type="button"
+                                        class="btn btn-primary btn-sm">Detay</button>
+                              </div>
+                              {% endif %}
+                              {% if User.DRM=='PASIF' %}
+                              <img src="/static/images/IconPasif.svg">
+                              <div>
+                                   <button style="width: 100px;" type="button"
+                                        class="btn btn-success btn-sm">Aç</button>
+                              </div>
+                              {% endif %}
+
+
+
+
+                              {% if User.IsAdmin==0 %}
+
+
+
+                              {% endif %}
+                    </td>
+               </tr>
+               {% endfor %}
+
+
+          </tbody>
+     </table>
+</div>
+
+{% endblock %}
+
+{% block ScriptKomut %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+     crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+     crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+     crossorigin="anonymous"></script>
+{% endblock %}

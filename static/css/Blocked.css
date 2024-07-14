@@ -1,0 +1,45 @@
+.flex-container {
+     justify-content: center;
+     align-items: center;
+     width: 75%;
+     margin: 0;
+}
+
+.flex-item {
+     justify-content: center;
+     align-items: center;
+     padding-top: 16px;
+     padding-bottom: 16px;
+     text-align: center;
+
+}
+
+.flex-item img {
+     justify-content: center;
+     align-items: center;
+     width: 90%;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+     .flex-item {
+          width: calc(75% - 16px);
+          align-items: center;
+          /* 3 öğe sığacak şekilde */
+     }
+}
+
+@media (max-width: 800px) {
+     .flex-item {
+          width: calc(100% - 16px);
+          align-items: center;
+          /* 2 öğe sığacak şekilde */
+     }
+}
+
+@media (max-width: 500px) {
+     .flex-item {
+          width: calc(100% - 16px);
+          align-items: center;
+     }
+}

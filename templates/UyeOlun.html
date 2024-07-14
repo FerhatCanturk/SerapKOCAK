@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+     <meta charset="utf-8">
+     <title>Üyelik Talep</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+     <link rel="stylesheet" href="/static/css/UyeOlun.css">
+     <link rel="stylesheet" href="/static/css/Index.css">
+
+</head>
+
+<body>
+     <div class="wrapper" style="background-image: url('/static/images/Back004.jpg');">
+          <div class="inner">
+               <div class="image-holder">
+                    <img src="/static/images/Sosyal002.jpg" alt>
+                    <li style="padding-top: 16px;">Formu tarafımıza gönderdikten sonra üyelik bedelini hesabımıza havale
+                         etmeniz beklenecektir.</li>
+                    <li style="padding-top: 16px;">Üyelik veya Proje Bedelini yatırabileceğiniz Banka Hesabımız:</li>
+                    <li style="padding-top: 16px;">Serap KOÇAK, Türkiye İş Bankası, Çankaya/Ankara Şubesi,
+                         Hesab Numarası: TR12 3456 7890 1234 5678 90
+                    </li>
+                    <li style="padding-top: 16px;">Anılan bedeli yatırdıktan sonra tarafımızla paylaşmanızın akabinde
+                         Mail Adresinize siteye giriş için kullanacağınız ONAY KODU'nu paylaşacağız.</li>
+                    <li style="padding-top: 16px;">30 Gün içerisinde ödemeniz alınamaması durumunda girişini yaptığınız
+                         kişisel bilgileriniz sistemimizden silinecektir.</li>
+
+               </div>
+
+
+
+
+               <form action="/UyelikTalepEdildi.html" method="POST">
+                    <h3>Üyelik Talep Formu</h3>
+                    <div class="form-group">
+                         <input type="text" name="Ad" placeholder="Adınız" class="form-control" required>
+                         <input type="text" name="Soyad" placeholder="Soyadınız" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                         <input type="text" name="GsmNo" placeholder="GSM Numaranız" class="form-control" required>
+                         <input type="text" name="UserName" placeholder="UserName" class="form-control" required>
+                         <i class="zmdi zmdi-account"></i>
+                    </div>
+                    <div class="form-wrapper">
+                         <input type="text" name="MailAdres" placeholder="Mail Adresiniz" class="form-control" required>
+                         <i class="zmdi zmdi-email"></i>
+                    </div>
+                    <div class="form-wrapper">
+                         <select name="Abonelik" class="form-control">
+                              <option value disabled selected>Abonelik Paketleri</option>
+                              <option value="WS">WorkShop Aboneliği</option>
+                              <option value="AA">Aylık Abonelik</option>
+                              <option value="SPA">Single Proje Aboneliği</option>
+                         </select>
+                         <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+                    </div>
+                    <div class="form-group">
+                         <input type="password" name="Sifre1" placeholder="Şifreniz" class="form-control" required>
+                         <input type="password" name="Sifre2" placeholder="Şifreniz (Tekrar)" class="form-control" required>
+                         <i class="zmdi zmdi-lock"></i>
+                    </div>
+                    <div class="form-wrapper">
+
+                         <div class="form-control" style="color:red">
+                              <input type="checkbox" name="check">
+                              <a href="KullanimSartlari.html">
+                                   Üyelik Sözleşmesini Okudum ve Kabul Ediyorum
+                              </a>
+                         </div>
+                         <div>
+                              {% if Mesaj %}
+                              <p>{{ Mesaj }}</p>
+                              {% endif %}
+
+                         </div>
+                         <i class="zmdi zmdi-lock"></i>
+                    </div>
+                    <button type="submit" class="submit">Üye Olun <i class="zmdi zmdi-arrow-right"></i></button>
+               </form>
+          </div>
+     </div>
+
+
+
+
+
+
+</body>
+
+</html>

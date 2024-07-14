@@ -1,0 +1,343 @@
+<!DOCTYPE html lang="tr">
+<html lang="tr">
+
+<head>
+     <title>Serap KOÇAK</title>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <!-- Kütüphane Style Tanımlamaları -->
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+     <!-- Font Tanımlamaları -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playwrite+NZ" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+     <!-- Özel Style Tanımlamaları -->
+     <link rel="stylesheet" href="/static/css/Index.css" />
+     <script src="/static/js/index.js"></script>
+</head>
+
+<body>
+     <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge"
+          style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+          <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright"
+               style="padding:0 12px;">
+               <i class="fa fa-remove"></i>
+          </a>
+          <div class="w3-bar-block w3-center">
+
+               <a href="IndexUyeGiris.html" class="w3-bar-item w3-button w3-hover-black"
+                    style="font-size: 14px; color:aquamarine" onclick="closeNav()">Üye Girişi</a>
+               <a href="UyeOlun.html" class="w3-bar-item w3-button w3-hover-black"
+                    style="font-size: 14px; color:aquamarine" onclick="closeNav()">Yeni Üyelik Talebi</a>
+               <a href="Sosyal.html" class="w3-bar-item w3-button w3-hover-black"
+                    style="font-size: 14px; color:aquamarine" onclick="closeNav()">Sosyal Etkinliklerimiz</a>
+               <a href="KullanimSartlari.html" class="w3-bar-item w3-button w3-hover-black"
+                    style="font-size: 14px; color:aquamarine" onclick="closeNav()">Kullanım Kurallarımız</a>
+               <a href="ButunModeller.html" class="w3-bar-item w3-button w3-hover-black"
+                    style="font-size: 14px; color:aquamarine" onclick="closeNav()">Bütün Modellerimiz</a>
+          </div>
+     </nav>
+
+     <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;"
+          onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+     <div class="AnaBack">
+          <div class="" style="max-width:1600px">
+               <div class="w3-center" style="margin-top: 120px;">
+                    <div class="SiyahGolge w3-animate-left"
+                         style="font-weight: bolder; font-size:32px; margin-top: 320px; color:yellow; font-family: 'Playwrite NZ';">
+                         {{ WSabit[0]["Sutun01"] }}
+                    </div>
+                    <div class="w3-animate-right SiyahGolge"
+                         style="font-weight: bolder; font-size:16px; color:rgb(10, 192, 49); font-family: 'Playwrite NZ';">
+                         {{ WSabit[0]["Sutun02"] }}
+                    </div>
+               </div>
+               <div class="w3-center max-width:100% w3-animate-zoom"> <img src="/static/images/IconOrgu.png" alt="" />
+               </div>
+               <div class="w3-center w3-animate-bottom BeyazGolge">
+                    <span
+                         style="font-weight: bolder; font-size:24px; color:rgb(164, 6, 106); font-family: 'Playwrite NZ';">
+                         {{ WSabit[0]["Sutun03"] }}
+                    </span>
+               </div>
+
+               <!-- Hakkımızda -->
+               <!-- Hakkımızda -->
+               <!-- Hakkımızda -->
+               {% for SPR in SonProje %}
+               <div style="margin-top:16px; padding-top:360px;">
+                    <div class="w3-center BeyazGolge">
+                         <span
+                              style="font-weight: bolder; font-size:24px; color:rgb(164, 6, 106); font-family: 'Playwrite NZ';">
+                              Biz Kimiz / Hakkımızda
+                         </span>
+                    </div>
+
+                    <div class="w3-main">
+                         <div class="w3-row-padding w3-padding-16" id="about">
+                              <div class="w3-row-padding">
+                                   <div class="w3-third w3-container w3-center">
+                                        <video class="HakkimizdaResimGolgesi"
+                                             src="data:video/mp4;base64,{{ SPR.Base64Video }}" type="video/mp4"
+                                             alt="Video" style="height:300px" class="w3-hover-opacity" controls>
+                                        </video>
+                                        <div class="w3-container w3-white"
+                                             style="margin-top:-5px; padding-top:32px; box-shadow: 5px 5px 20px rgb(0, 0, 0, 1);">
+                                             <p> {{ SPR.ModelAdi }} Tanıtım Videomuz </p>
+                                             <p>
+                                                  Modelimiz {{ SPR.YayinTarihi }} Döneminde Beğeninize Sunulmuş Olup
+                                                  Toplamda {{ SPR.PictSys }}-Resim ve {{ SPR.VideoSys }}-Video'dan
+                                                  Oluşmaktadır.
+                                             </p>
+                                        </div>
+                                   </div>
+                                   <div class="w3-third w3-container w3-center BeyazGolge">
+                                        <div class="w3-container"
+                                             style="padding-top:16px; padding-bottom:16px; font-size:16px; ">
+                                             {{ WSabit[0]["Sutun04"] }}
+                                             <br /><br />
+                                             {{ WSabit[0]["Sutun05"] }}
+                                             <br /><br />
+                                             {{ WSabit[0]["Sutun06"] }}
+                                        </div>
+                                   </div>
+                                   <div class="w3-third w3-container w3-center">
+                                        <img class="HakkimizdaResimGolgesi"
+                                             src="data:image/jpeg;base64,{{ SPR.Base64Pict }}" alt="Norway"
+                                             style="height:300px" class="w3-hover-opacity"></img>
+
+                                        <div class="w3-container w3-white"
+                                             style="margin-top:-5px; padding-top:32px; box-shadow: 5px 5px 20px rgb(0, 0, 0, 1);">
+                                             <p>
+                                                  {{ SPR.ModelAdi }} Tamamlanmış Resmimiz
+                                             </p>
+                                             <p>
+                                                  Modelimiz {{ SPR.YayinTarihi }} Döneminde Beğeninize Sunulmuş Olup
+                                                  Toplamda {{SPR.PictSys }}-Resim ve {{ SPR.VideoSys }}-Video'dan
+                                                  Oluşmaktadır.
+                                             </p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="w3-center; BeyazGolge"
+                    style="padding-top:16px; color:rgb(211, 94, 36); padding-bottom:16px; font-size:16px; justify-items: center; text-align: center;">
+                    Şu anda aktif olarak {{ ToplamModel[0]["ToplamModelSys"] }}-Adet Modelimiz beğeninize sunulmuş olup
+                    bu modellerimiz {{ ToplamModel[0]["ToplamResimSys"] }}-Adet Resim ve
+                    {{ ToplamModel[0]["ToplamVideoSys"] }}-Adet Video'dan' oluşmaktadır.
+               </div>
+               <div class="w3-center; BeyazGolge"
+                    style="padding-top:16px; color:rgb(0, 0, 0); padding-bottom:16px; font-size:16px; justify-items: center; text-align: center;">
+                    {{ WSabit[0]["Sutun07"] }}
+               </div>
+               {% endfor %}
+               <!-- Çalışmalarımızdan Örnekler -->
+               <!-- Çalışmalarımızdan Örnekler -->
+               <!-- Çalışmalarımızdan Örnekler -->
+               <div class="w3-main w3-center" id="Modeller">
+                    <div class="w3-container w3-padding-large" style="margin-bottom:32px; ">
+                         <br /><br /><br />
+
+                         <div class="flex-container">
+                              {% for RS in RastGeleSecim %}
+                              <div class="flex-item"
+                                   style="box-shadow: 2px 2px 2px rgb(255, 255, 255, 0.25); border-radius: 15px;">
+                                   <img class="HakkimizdaResimGolgesi" style="border-radius: 15px;"
+                                        src="data:image/jpeg;base64,{{ RS['Base64Pict'] }}" alt="" />
+                                   <div style="color:yellow; padding-top: 16px; font-family: 'Playwrite NZ';">
+                                        {{ RS.ModelAdi }}
+                                   </div>
+                                   <div style="color:aliceblue">Proje Tarihi: {{ RS.YayinTarihi }}
+                                   </div>
+                                   <div style="color:aliceblue; padding-top: 16px;">Uyelerimizin
+                                        Değerlemesi</div>
+                                   <div style="color:aliceblue">{{ RS.VerilenPuanSayisi }}-Kişi (
+                                        {{ RS.OrtPuan }} / 5 )
+                                   </div>
+                                   <div style="color:aliceblue; padding-top: 16px;">Single Proje
+                                        Fiyatı</div>
+                                   <div style="color:aliceblue;"> {{ RS.Fiyati }}-TL</div>
+                                   <div style="color:aliceblue; padding-top: 16px;">Proje İçeriği
+                                   </div>
+                                   <div style="color:aliceblue"> {{ RS.ResimSayisi }}-Resim / {{
+                                        RS.VideoSayisi }}-Video</div>
+                              </div>
+                              {% endfor %}
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Üyelik Bildirimleri -->
+               <!-- Üyelik Bildirimleri -->
+               <!-- Üyelik Bildirimleri -->
+               <div class="w3-main" id="Modeller">
+                    <div class="w3-container w3-padding-large" style="margin-bottom:32px; ">
+                         <br /><br /><br />
+                         <div class="flex-container">
+
+
+                              {% for AB in AbonelikPaket %}
+
+                              <div class="flex-item"
+                                   style="box-shadow: 2px 2px 2px rgb(255, 255, 255, 0.25); border-radius: 15px;">
+                                   <div style="color:yellow; padding-top: 16px; font-family: 'Playwrite NZ';">
+                                        {{ AB.Cins }}
+                                   </div>
+                                   <div style="color:aliceblue; padding-top: 16px;">{{ AB.Sutun1 }}</div>
+                                   <div style="color:aliceblue; padding-top: 16px;"> {{ AB.Sutun2 }}</div>
+                                   <div style="color:aliceblue; padding-top: 16px;"> {{ AB.Sutun3 }}</div>
+                                   <div style="color:aliceblue; padding-top: 16px;"> {{ AB.Sutun4 }}</div>
+                                   <div style="color:aliceblue; padding-top: 16px;"> {{ AB.SutunFiyat }}</div>
+
+                              </div>
+                              {% endfor %}
+
+                         </div>
+                    </div>
+               </div>
+
+
+
+               <!-- Üyelik Bildirimleri -->
+               <!-- Üyelik Bildirimleri -->
+               <!-- Üyelik Bildirimleri -->
+               <div class="w3-main" id="MesajFormu">
+
+                    <!-- Contact Section -->
+                    <!-- Contact Section -->
+                    <!-- Contact Section -->
+
+
+                    <form action="/MesajGonder" method="POST">
+                         <div class="AnaEkran4" style="margin-top:16px;">
+                              <div class="w3-container w3-padding-large w3-transparent">
+                                   <div class="container-fluid">
+                                        <br /><br /><br />
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8">
+                                             <div class="w3-center BeyazGolge"
+                                                  style="font-size: 32px; color:rgb(108, 11, 59); font-family: 'Playwrite NZ';">
+                                                  <span><b>Bize Ulaşın</b></span>
+                                             </div>
+                                             <form>
+                                                  <div class="row" style="padding-top:32px;">
+                                                       <div class="col-md-4" style="padding-top:32px;">
+                                                            <input type="text" name="AdSoyad"
+                                                                 placeholder="Adınız Soyadınız" class="form-control"
+                                                                 required />
+                                                       </div>
+                                                       <div class="col-md-4" style="padding-top:32px;">
+                                                            <input type="Email" name="MailAdres"
+                                                                 placeholder="Mail Adresiniz" class="form-control"
+                                                                 required />
+                                                       </div>
+                                                       <div class="col-md-4" style="padding-top: 32px;">
+                                                            <input type="number" name="Telefon"
+                                                                 placeholder="Telefon Numaranız" class="form-control"
+                                                                 required />
+                                                       </div>
+                                                  </div>
+                                                  <br /><br />
+
+                                                  <input type="text" name="Konu" placeholder="Mesajınızın Konusu"
+                                                       class="form-control" required />
+
+                                                  <br /><br />
+
+                                                  <textarea rows="5" name="Mesaj" placeholder="Mesajınızı Yazınız..."
+                                                       class="form-control" required></textarea>
+                                                  <br /><br />
+
+                                                  <center>
+                                                       <button
+                                                            class="w3-button w3-teal w3-padding-large w3-hover-black">
+                                                            <i class="fas fa-paper-plane"></i>&nbsp;Mesaj
+                                                            Gönder</button>
+                                                  </center>
+                                             </form>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </form>
+               </div>
+               <div class="w3-row-padding w3-center w3-padding-24">
+                    <div class="w3-third w3-dark-grey">
+                         <p>
+                              <i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i>
+                         </p>
+                         <p>{{ WSabit[0]["Sutun08"] }}</p>
+                    </div>
+                    <div class="w3-third w3-teal">
+                         <p>
+                              <i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i>
+                         </p>
+                         <p>{{ WSabit[0]["Sutun09"] }}</p>
+                    </div>
+                    <div class="w3-third w3-dark-grey">
+                         <p>
+                              <i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i>
+                         </p>
+                         <p>{{ WSabit[0]["Sutun10"] }}</p>
+                    </div>
+               </div>
+          </div>
+
+
+          <!-- Footer -->
+          <!-- Footer -->
+          <!-- Footer -->
+
+          <div class="w3-black w3-center w3-padding-24" style="height: 100px;">
+               <a href="#" class="fa fa-facebook fa-3x"></a>
+               <a href="#" class="fa fa-instagram fa-3x" style="margin-left:100px"></a>
+          </div>
+     </div>
+     <!-- End page content -->
+
+     </div>
+
+
+     <script>
+          // Form gönderildiğinde çalışacak fonksiyon
+          document.getElementById('contactForm').addEventListener('submit', function (event) {
+               event.preventDefault(); // Formun gerçek gönderimini engelle
+
+               // Mesaj kutusunu göster
+               const messageBox = document.getElementById('messageBox');
+               messageBox.style.display = 'block';
+
+               // 3 saniye sonra mesaj kutusunu gizle
+               setTimeout(function () {
+                    messageBox.style.display = 'none';
+               }, 3000);
+
+               // Formu gerçekten göndermek için bu satırı ekleyin
+               this.submit();
+          });
+     </script>
+
+
+
+     <script>
+          function openNav() {
+               document.getElementById("mySidebar").style.width = "50%";
+               document.getElementById("mySidebar").style.display = "block";
+          }
+
+          function closeNav() {
+               document.getElementById("mySidebar").style.display = "none";
+          }
+     </script>
+
+</body>
+
+</html>

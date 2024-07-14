@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+     <link rel="stylesheet" href="/static/css/Blocked.css" />
+     <style>
+          body {
+               margin: 0;
+               font-family: Arial, sans-serif;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               height: 100vh;
+               background-color: #bd8989;
+               color: #000000;
+          }
+
+          .container {
+               display: grid;
+               width: 75vw;
+               grid-template-columns: 1fr;
+               gap: 16px;
+               max-width: 600px;
+               padding: 8px;
+               background-color: #fff;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+               border-radius: 16px;
+               text-align: center;
+          }
+
+          .container img {
+               width: 100%;
+               height: auto;
+          }
+
+          .container p {
+               margin: 0;
+
+               color: rgb(111, 0, 0);
+               grid-column: span 2;
+          }
+
+          @media (min-width: 768px) {
+               .container {
+                    grid-template-columns: 1fr 1fr;
+               }
+
+               .container img {
+                    grid-column: span 2;
+               }
+          }
+     </style>
+     <title>Document</title>
+</head>
+
+<body>
+     <form action="" method="POST">
+          <div class="container">
+               <img src="/static/images/MsgBlock.jpg" alt="Blocked">
+               <p>
+                    Üyelik aşamasında kabul ettiğiniz Site Kullanım Kurallarını ihlal ettiğiniz anlaşılmıştır.
+               </p>
+               <p>
+                    Aynı sözleşmenin devam eden maddelerinde de belirtildiği üzere site kullanım kurallarını ihlal eden
+                    abonelerimizin Web Sayfamız'a erişimlerinin kapatılacağı ve bu konuda da herhangi bir hak veya
+                    alacak
+                    talebinde bulunmayacağınızı belirtmiş bulunmamızın akabinde bu kurallarımızı kabul etmiştiniz.
+               </p>
+               <p>
+                    Bu kuralları ihlal ettiğinizden dolayı ABONELİĞİNİZ KAPATILARAK, WEB SAYFAMIZ'a erişiminiz süresiz
+                    olarak
+                    engellenmiştir.
+               </p>
+          </div>
+     </form>
+</body>
+
+</html>

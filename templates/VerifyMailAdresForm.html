@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Üye Girişi</title>
+     <link rel="stylesheet" href="/static/css/UyeGiris.css">
+</head>
+
+<body>
+     <div class="wrapper">
+          <form action="/VerifyMail" method="POST">
+               <input type="hidden" name="UserID" value="{{ Deger1[0]['UserID'] }}">
+               <h2>Sayın</h2>
+               <h2>{{ Deger1[0]["UserAdiSoyadi"] }}</h2>
+               <h2>Üye Girişiniz için Son Bir Adımınız Kaldı</h2>
+               <div class="input-field">
+                    <input type="text" name="VerifyCode"
+                         placeholder="Onay Kodunuz">
+                   
+               </div>
+               <h4 style="color:white">{{ Deger1[0]['UserMailAdress'].strip() }} Mail Adresinize Gönderdiğimiz Onay Kodunu Yazınız...</h4>
+               <div style="padding-top: 16px; "><button type="submit">Siteye Giriş Yapın</button></div>
+               <div style="color:yellow; padding-top: 32px; font-size: 12px;">
+                    İrtibat halinde olabilmemiz için mail adresinize gönderilen onay kodunu giriniz....
+               </div>
+          </form>
+     </div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+*body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     font-family: "Montserrat", sans-serif
+}
+
+.w3-row-padding img {
+     margin-bottom: 12px
+}
+
+.bgimg {
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-image: url('/static/images/Back001.jpg');
+     min-height: 100%;
+}
+
+
+
+.SiyahGolge {
+     text-shadow:
+          2px 2px 2px rgb(0, 0, 0),
+          -2px -2px 2px rgb(0, 0, 0),
+          -2px 2px 2px rgb(0, 0, 0),
+          2px -2px 2px rgb(0, 0, 0);
+          
+     
+}
+
+.SusluGolgeliYazi {
+     font-weight: bolder;
+     text-align: center;
+}
